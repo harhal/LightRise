@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectGuid>{D2117DB1-0CC9-49A8-B0A2-D6F903384A6F}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpineContentExporter</RootNamespace>
+    <AssemblyName>SpineContentExporter</AssemblyName>
+    <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
+    <XnaPlatform>Windows</XnaPlatform>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>true</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AtlasPipeline.cs" />
+    <Compile Include="CSharpSpine\Animation.cs" />
+    <Compile Include="CSharpSpine\AnimationState.cs" />
+    <Compile Include="CSharpSpine\AnimationStateData.cs" />
+    <Compile Include="CSharpSpine\Atlas.cs" />
+    <Compile Include="CSharpSpine\Attachments\AtlasAttachmentLoader.cs" />
+    <Compile Include="CSharpSpine\Attachments\Attachment.cs" />
+    <Compile Include="CSharpSpine\Attachments\AttachmentLoader.cs" />
+    <Compile Include="CSharpSpine\Attachments\AttachmentType.cs" />
+    <Compile Include="CSharpSpine\Attachments\BoundingBoxAttachment.cs" />
+    <Compile Include="CSharpSpine\Attachments\MeshAttachment.cs" />
+    <Compile Include="CSharpSpine\Attachments\PathAttachment.cs" />
+    <Compile Include="CSharpSpine\Attachments\RegionAttachment.cs" />
+    <Compile Include="CSharpSpine\Attachments\VertexAttachment.cs" />
+    <Compile Include="CSharpSpine\BlendMode.cs" />
+    <Compile Include="CSharpSpine\Bone.cs" />
+    <Compile Include="CSharpSpine\BoneData.cs" />
+    <Compile Include="CSharpSpine\Event.cs" />
+    <Compile Include="CSharpSpine\EventData.cs" />
+    <Compile Include="CSharpSpine\ExposedList.cs" />
+    <Compile Include="CSharpSpine\IConstraint.cs" />
+    <Compile Include="CSharpSpine\IkConstraint.cs" />
+    <Compile Include="CSharpSpine\IkConstraintData.cs" />
+    <Compile Include="CSharpSpine\IUpdatable.cs" />
+    <Compile Include="CSharpSpine\Json.cs" />
+    <Compile Include="CSharpSpine\MathUtils.cs" />
+    <Compile Include="CSharpSpine\PathConstraint.cs" />
+    <Compile Include="CSharpSpine\PathConstraintData.cs" />
+    <Compile Include="CSharpSpine\Skeleton.cs" />
+    <Compile Include="CSharpSpine\SkeletonBinary.cs" />
+    <Compile Include="CSharpSpine\SkeletonBounds.cs" />
+    <Compile Include="CSharpSpine\SkeletonData.cs" />
+    <Compile Include="CSharpSpine\SkeletonJson.cs" />
+    <Compile Include="CSharpSpine\Skin.cs" />
+    <Compile Include="CSharpSpine\Slot.cs" />
+    <Compile Include="CSharpSpine\SlotData.cs" />
+    <Compile Include="CSharpSpine\TransformConstraint.cs" />
+    <Compile Include="CSharpSpine\TransformConstraintData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SkeletonDataPipeline.cs" />
+    <Compile Include="XNASpine\MeshBatcher.cs" />
+    <Compile Include="XNASpine\RegionBatcher.cs" />
+    <Compile Include="XNASpine\SkeletonMeshRenderer.cs" />
+    <Compile Include="XNASpine\SkeletonRegionRenderer.cs" />
+    <Compile Include="XNASpine\Util.cs" />
+    <Compile Include="XNASpine\XnaTextureLoader.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.ContentPipelineExtensions.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+     Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
